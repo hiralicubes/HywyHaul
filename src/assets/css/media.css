@@ -1,0 +1,39 @@
+@media only screen and (max-width:1600px){
+  .authContainer{font-size: 1.1em;}
+}
+@media only screen and (max-width:1440px){
+  .authContainer{font-size: 1.2em;}
+}
+@media only screen and (max-width:1280px){
+  .authContainer{font-size: 1.3em;}
+}
+@media only screen and (max-width:1024px){
+  .authContainer{font-size: 1.4em;}
+}
+@media only screen and (max-width:999px){
+  .authContainer{font-size: 1.5em;}
+  .authFlex, .form-forgot{display: block;font-size: 1.1em;}
+  .authFlexStart{width: 100%;}
+  .darkContent{padding: 10em 2.5em 2.5em;}
+  .wrap, .form-forgot{width: 100%; max-width: 100%;}
+  .form-forgot{padding: 2em 0;}
+  .authContainer{padding: 5em;}
+}
+@media only screen and (max-width:767px){
+  .authContainer h2.heading{font-size: 3.5em; padding-bottom: 1em;}
+  .authFlex, .form-forgot{font-size: 1.4em;}
+}
+@media only screen and (max-width:640px){
+  .authContainer h2.heading{font-size: 4em;}
+  .authFlex, .form-forgot{font-size: 1.8em;}
+  .frm-inline .frm{width: 100%; float: none;}
+}
+@media only screen and (max-width:479px){
+  .authContainer h2.heading{font-size: 4em;}
+  .authFlex, .form-forgot{font-size: 2em;}
+  .darkContent { padding: 10em 1.5em 2em;}
+}
+@media only screen and (max-width:400px){
+  .authContainer h2.heading{font-size: 4.5em;}
+  .authFlex, .form-forgot{font-size: 2.5em;}
+}

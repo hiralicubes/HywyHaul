@@ -1,0 +1,365 @@
+@font-face {
+    font-family:'Avenir';
+    src: url('/assets/css/fonts/Avenir Black.eot');
+	src: url('/assets/css/fonts/Avenir Black/assets/css/fonts/.eot?#iefix') format('embedded-opentype'),
+		url('/assets/css/fonts/Avenir Black.woff2') format('woff2'),
+		url('/assets/css/fonts/Avenir Black.woff') format('woff'),
+		url('/assets/css/fonts/Avenir Black.svg#Avenir Black') format('svg');
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-E308;
+}
+@font-face {
+    font-family:'Avenir';
+    src: url('/assets/css/fonts/Avenir Book.eot');
+	src: url('/assets/css/fonts/Avenir Book.eot?#iefix') format('embedded-opentype'),
+		url('/assets/css/fonts/Avenir Book.woff2') format('woff2'),
+		url('/assets/css/fonts/Avenir Book.woff') format('woff'),
+		url('/assets/css/fonts/Avenir Book.svg#Avenir Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-02DC;
+}
+
+@font-face {
+    font-family:'Avenir';
+    src: url('/assets/css/fonts/Avenir Heavy.eot');
+	src: url('/assets/css/fonts/Avenir Heavy.eot?#iefix') format('embedded-opentype'),
+		url('/assets/css/fonts/Avenir Heavy.woff2') format('woff2'),
+		url('/assets/css/fonts/Avenir Heavy.woff') format('woff'),
+		url('/assets/css/fonts/Avenir Heavy.svg#Avenir Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-E305;
+}
+
+@font-face {
+    font-family:'Avenir';
+    src: url('/assets/css/fonts/Avenir Light.eot');
+	src: url('/assets/css/fonts/Avenir Light.eot?#iefix') format('embedded-opentype'),
+		url('/assets/css/fonts/Avenir Light.woff2') format('woff2'),
+		url('/assets/css/fonts/Avenir Light.woff') format('woff'),
+		url('/assets/css/fonts/Avenir Light.svg#Avenir Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-E308;
+}
+
+@font-face {
+    font-family:'Avenir';
+    src: url('/assets/css/fonts/Avenir Medium.eot');
+	src: url('/assets/css/fonts/Avenir Medium.eot?#iefix') format('embedded-opentype'),
+		url('/assets/css/fonts/Avenir Medium.woff2') format('woff2'),
+		url('/assets/css/fonts/Avenir Medium.woff') format('woff'),
+		url('/assets/css/fonts/Avenir Medium.svg#Avenir Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-02DC;
+}
+
+/** Proxima Nova **/
+
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.eot');
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.woff2') format('woff2'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.woff') format('woff'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.ttf') format('truetype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Black-webfont.svg#proxima_nova_altblack') format('svg');
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.eot');
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.woff2') format('woff2'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.woff') format('woff'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.ttf') format('truetype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.svg#proxima_nova_altbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot');
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.woff') format('woff'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.ttf') format('truetype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.svg#proxima_nova_altregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Semibold-webfont.eot');
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Semibold-webfont.woff2') format('woff2'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Semibold-webfont.woff') format('woff'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Semibold-webfont.ttf') format('truetype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Semibold-webfont.svg#proxima_nova_ltsemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Thin-webfont.eot');
+    src: url('/assets/css/fonts/Mark Simonson - Proxima Nova Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Thin-webfont.woff2') format('woff2'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Thin-webfont.woff') format('woff'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Thin-webfont.ttf') format('truetype'),
+         url('/assets/css/fonts/Mark Simonson - Proxima Nova Thin-webfont.svg#proxima_nova_ltthin') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;}
+*:before, *:after{box-sizing:border-box;}
+body{font-family: 'proxima_nova', sans-serif;font-size:0.83vw;color:#888;height:100%;font-weight:400; background-color: #F5F8FB;}
+a{text-decoration:none;outline:none;color:#4A90E2;}
+a:hover{color:#F5A623;}
+img{vertical-align:top;max-width:100%;height:auto;border:none;}
+input, select, textarea, button{font-family:"proxima_nova",sans-serif;font-size:14px;color:#fff;font-weight:400;}
+h1, h2, h3, h4, h5, h6, p{padding:0 0 0.30em;}
+h1, h2, h3, h4, h5, h6{color:#000; margin: 0}
+p{color: #999999; font-size: 1.125em; letter-spacing:0.03125em; line-height: 1.5; margin-bottom: 1.5em; word-wrap: break-word; padding-bottom: 0;}
+p.medium{font-weight: 600;}
+/* h1{font-size:2em}
+h2{font-size:1.8em;}
+h3{font-size:1.6em;}
+h4{font-size:1.4em;}
+h5{font-size:1.2em;}
+h6{font-size:1em;} */
+ul{padding:0 0 1.250em 1.250em;}
+li{padding:0.250em 0; letter-spacing:0.02em; line-height: 1.5; word-wrap: break-word;}
+iframe{max-width:100%;border:none;}
+.fl{float:left;}
+.fr{float:right;}
+.clr,
+.cl,
+.clear{clear:both;}
+.clearfix:after{clear:both;display:block;visibility:hidden;content:"";}
+input:focus,
+textarea:focus,
+select:focus,
+button:focus{outline:none;}
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]{border:0.0625em solid #DFDFDF; background-color:transparent;padding:0 0.61em;height:2.8em;max-width:100%;
+border-radius:0.125em;box-shadow:none;width:100%;color:#000;font-size:1.125em;}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus{background-color:transparent;color:#000; border-color:#ddd;}
+select{border:0.0625em solid #DFDFDF; background:#ffffff;border-radius:0.125em;padding:0 0.61em;height:2.8em;box-shadow:none;font-size:1.125em; color: #000;}
+input[type="image"],
+input[type="submit"],
+input[type="button"],
+button, a.button{background:#F5A623;box-shadow:none;border:none; border-radius:0.1875em;color:#FFFFFF; font-family: 'proxima_nova'; cursor:pointer;display:inline-block;font-size:1.125em;padding:0 2em;height:2.8em;line-height:normal;transition:background-color 0.2s ease-in-out 0s, border-color 0s ease-in-out 0s; -webkit-transition:background-color 0.2s ease-in-out 0s, border-color 0s ease-in-out 0s; font-weight:600;text-transform:none;appearance:normal;-webkit-appearance:none;outline:none; margin:0.6em 0;}
+a.button{display: inline-flex; align-items: center; justify-content: center;}
+.full-button{width: 100%;}
+a.full-button{display: flex; justify-content: center; align-items: center;}
+input[type="image"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover{background-color:#000;}
+input[type="image"]:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+button:active{box-shadow:none;outline:none;}
+textarea{resize:none;min-height:8.84em;padding:0.800em 1.563em;}
+.alignleft{text-align: left;}
+.alignright{text-align: right;}
+.aligncenter{text-align: center;}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
+input[type=number]{-moz-appearance:textfield;}
+.quantity input{width:45px;height:42px;line-height:1.65;float:left;display:block;padding:0;margin:0;padding-left:20px;border:1px solid #eee;}
+.quantity input:focus{outline:0;}
+
+.wrapper{margin:0 auto;padding:0 9.6875em;max-width:100%; width:100%;}
+a.linkButton{ color: #4A90E2; font-size: 1.125em;}
+a.linkButton:hover{color: #F5A623;}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #97A4B1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #97A4B1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #97A4B1;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #97A4B1;
+}
+
+/* Heading Font */
+html, body{height: 100%;}
+
+h4.title{
+  font-size: 1.625em;
+	font-weight: 600;
+	line-height: 1;
+  color: #4C4C4C;
+  padding-bottom: 1.125em;
+  margin-bottom: 0;
+}
+.authContainer{
+  padding: 2em;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height:100vh;
+}
+.wrap{width: 71.25em; display: block;}
+h2.heading {
+	font-family:'Avenir';
+	font-size: 2.625em;
+	font-weight: 900;
+	line-height: 1;
+  color: #4C4C4C;
+}
+h2.heading span{color: #008FF7;}
+.authContainer h2.heading{padding-bottom: 1.5em}
+.authFlex{
+  display: flex;
+  width: 100%;
+  background-color: #FFFFFF;
+	box-shadow: 0 0.875em 2.5em 0 rgba(0,0,0,0.06);
+  flex-wrap: wrap;
+}
+
+.authFlexStart, .authFlexEnd{flex: 1; position: relative;}
+.authFlexStart{background-color: #29336F; width: 40%;}
+.authFlexEnd{flex: 1.1;}
+.authFlexEnd{display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.backgroundImage{
+  background-image: url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 13% 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4
+}
+.darkContent{
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  flex: 1;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2.5em;
+  height: 100%;
+}
+.darkContent h1,
+.darkContent h2,
+.darkContent h3,
+.darkContent h4,
+.darkContent h5,
+.darkContent h6,
+.darkContent p{
+  color: #fff;
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+.darkContent h3{
+	color: #FFFFFF;
+	font-size: 2em;
+	letter-spacing: 0.06em;
+	line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+}
+.form-content {
+    padding: 2.5em;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form{ border-radius: 0.25em; background-color: #FFFFFF; box-shadow: 0 0.125em 0.6253em 0 rgba(187,195,202,0.67); padding: 1.8753em; margin: 1em 0;}
+.label{ color: #4A4A4A; font-size: 1.125em; letter-spacing: 0.03125em; line-height: 1.3; margin-bottom: 0.75em; display: block;}
+.frm{margin-bottom: 1.25em; flex: 1;}
+.frm-bottom{ padding: 3em 2em 1em;}
+.frm-bottom p{margin: 0;}
+.frm-inline{margin: 0 -0.625em;}
+.frm-inline:after{content: ""; display: block;clear: both;}
+.frm-inline .frm{width: 50%; float: left; padding-left: 0.625em; padding-right: 0.625em;}
+.frm-inline .frm-full{width: 100%;}
+.form-register .frm-bottom{padding: 2em 2em 0;}
+
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex: 1;
+    height: 100%;
+}
+.darkContent-inner{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+}
+.form-forgot{max-width: 39em; margin: 0 auto;}
+.form-header{padding: 0 2.5em;}
+.form-header h4.title{padding-bottom: 0.5em}
+.form-header p{padding-bottom: 0; font-size: 1em;}
+.form-forgot .form{padding: 3.125em;}
+
