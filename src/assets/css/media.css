@@ -1,5 +1,6 @@
 @media only screen and (max-width:1600px){
   .authContainer{font-size: 1.1em;}
+  .content, .header{font-size: 1.1em;}
 }
 @media only screen and (max-width:1440px){
   .authContainer{font-size: 1.2em;}
