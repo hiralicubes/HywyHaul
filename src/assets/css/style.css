@@ -793,12 +793,14 @@ h5.heading {
   line-height: 1.5;
   padding-bottom: 0.5em;
 }
-.small-label span{
-    color: #97A4B1;
-    font-size: 0.8125em;
-    font-weight: 600;
-    letter-spacing: 0.054375em;
+
+.small-label span {
+  color: #97A4B1;
+  font-size: 0.8125em;
+  font-weight: 600;
+  letter-spacing: 0.054375em;
 }
+
 .flex-body .frm-inline {
   margin: 0 -1.25em;
 }
@@ -825,7 +827,12 @@ h5.heading {
 .inner-frm-full {
   flex: 1;
 }
-.flex-body .input{font-size: 0.9375em; height: 3em;}
+
+.flex-body .input {
+  font-size: 0.9375em;
+  height: 3em;
+}
+
 .input.input-number {
   width: 3.75em;
 }
@@ -859,12 +866,14 @@ h5.heading {
   box-shadow: 0 0.125em 0.625em 0 rgba(187, 195, 202, 0.67);
   overflow: hidden;
 }
-.profilePhoto img{
+
+.profilePhoto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   -webkit-object-fit: cover;
 }
+
 .flex-head {
   display: flex;
   align-items: center;
@@ -898,10 +907,11 @@ small {
 
 .RefNo {
   color: #6B6B6B;
-	font-size: 0.875em;
-	font-weight: 600;
-	letter-spacing: 0.04375em;	
+  font-size: 0.875em;
+  font-weight: 600;
+  letter-spacing: 0.04375em;
 }
-.RefNo span{
+
+.RefNo span {
   color: #29336F;
 }

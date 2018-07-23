@@ -26,12 +26,14 @@
               "src/styles.css",
               "src/assets/css/slick.css",
               "src/assets/css/slick-theme.css",
+              "src/assets/css/bootstrap.min.css",
               "src/assets/css/style.css",
               "src/assets/css/media.css"
             ],
             "scripts": [
               "src/assets/js/jquery-3.3.1.min.js",
-              "src/assets/js/slick.min.js"
+              "src/assets/js/slick.min.js",
+              "node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js"
             ]
           },
           "configurations": {

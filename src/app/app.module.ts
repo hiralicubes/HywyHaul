@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    
+
   ],
   imports: [
     AppRoutingModule,
@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
   exports: [
     AppRoutingModule,
     BrowserModule
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

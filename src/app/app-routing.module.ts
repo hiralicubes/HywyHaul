@@ -10,12 +10,15 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CreateLoadComponent } from './pages/create-load/create-load.component';
 import { HeaderComponent } from './common/header/header.component';
 
+import { LoadListComponent } from './pages/load-list/load-list.component';
+
 const routes: Routes = [
     {
         path: 'pages', component: PagesComponent,
         children: [
+            { path: 'load-list', component: LoadListComponent },
             { path: 'profile', component: ProfileComponent },
-            { path: 'create-load', component: CreateLoadComponent },            
+            { path: 'create-load', component: CreateLoadComponent },
         ]
     },
     {
@@ -44,7 +47,8 @@ const routes: Routes = [
         PagesComponent,
         ProfileComponent,
         CreateLoadComponent,
-        HeaderComponent
+        HeaderComponent,
+        LoadListComponent
     ]
 })
 export class AppRoutingModule { }
