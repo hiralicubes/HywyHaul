@@ -935,9 +935,11 @@ small {
 }
 ul.nav{margin: 0; padding: 0}
 .nav-tabs{border-bottom: 0;}
+
+
 .tab-content{
     background-color: #FFFFFF;
     box-shadow: 0 0.125em 0.625em 0 rgba(187,195,202,0.67);
-    padding: 1.875em 3.4375em;
+    padding: 1.875em 3.4375em
   
 }
