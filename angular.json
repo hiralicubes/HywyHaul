@@ -33,7 +33,7 @@
             "scripts": [
               "src/assets/js/jquery-3.3.1.min.js",
               "src/assets/js/slick.min.js",
-              "node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js"
+              "src/assets/js/bootstrap.min.js"              
             ]
           },
           "configurations": {
