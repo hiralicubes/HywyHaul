@@ -13,7 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProfileComponent implements OnInit {
 
-  //public user: any = JSON.parse(localStorage.getItem("currUser"));
   profileForm: FormGroup;
   public token = localStorage.getItem('userToken');
   public user : any = [];
@@ -84,7 +83,6 @@ export class ProfileComponent implements OnInit {
         data => {
           if (data['code'] == 'OK') {
             this.cities = data['data'];
-            //this.loading = false;
           } else {
             this.toastr.error("Error in process!", 'Oops!');
           }
@@ -107,9 +105,7 @@ export class ProfileComponent implements OnInit {
     this.profileForm.controls['firstName'].markAsTouched();
     this.profileForm.controls['lastName'].markAsTouched();
     this.profileForm.controls['phoneNumber'].markAsTouched();
-    //this.profileForm.controls['code'].markAsTouched();
     this.profileForm.controls['phoneNumber2'].markAsTouched();
-    //this.profileForm.controls['code2'].markAsTouched();
     this.profileForm.controls['name'].markAsTouched();
     this.profileForm.controls['city'].markAsTouched();
     this.profileForm.controls['state'].markAsTouched();
@@ -120,15 +116,12 @@ export class ProfileComponent implements OnInit {
     this.profileForm.controls['zip'].markAsTouched();
 
     if (this.profileForm.valid) {
-      //var formData = this.profileForm.value;
       var formData = {
         'data': {
           "firstName": this.profileForm.value.firstName,
           "lastName": this.profileForm.value.lastName,
           "phoneNumber": this.profileForm.value.phoneNumber,
-        //  "code": this.profileForm.value.code,
           "phoneNumber2": this.profileForm.value.phoneNumber2,
-        //  "code2": this.profileForm.value.code2,
           "shipper": {
             "name": this.profileForm.value.name,
             "address": {
@@ -162,7 +155,8 @@ export class ProfileComponent implements OnInit {
           'PROFILE-PHOTO':this.image,
           'WORKFLOW-TYPE':'PROFILE-REGISTRATION'
         };
-        this.userService.uploadPhoto(this.token,photoData)
+        var pData = JSON.stringify(photoData);
+        this.userService.uploadPhoto(this.token,pData)
           .subscribe(
             data => {
               if (data['code'] == 'OK') {
