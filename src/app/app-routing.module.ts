@@ -9,6 +9,7 @@ import { PagesComponent } from './pages/pages.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CreateLoadComponent } from './pages/create-load/create-load.component';
 import { HeaderComponent } from './common/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoadListComponent } from './pages/load-list/load-list.component';
 import { LoadDetailsComponent } from './pages/load-details/load-details.component';
@@ -38,7 +39,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        FormsModule,
+        ReactiveFormsModule,
     ],
     exports: [RouterModule],
     declarations: [

@@ -1,59 +1,64 @@
 <div class="profile">
-  <h4 class="title">Profile</h4>
+  <h4 class="title">{{title}}</h4>
   <div class="snowBlock fullHeight">
     <div class="flex">
       <div class="flex-left">
         <div class="uploadPhotoContainer">
           <div class="uploadPhoto">
-
           </div>
           <a href="javascript:void(0)" class="UploadButton">
             Upload Photo
-            <input type="file" name="" id="">
+            <input type="file" name="" id="" (change)="onFileChange($event)">
           </a>
         </div>
       </div>
       <div class="flex-body flex-body-space">
+        <form class="form" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
         <div class="form-block">
           <h5 class="heading">Personal Information</h5>
           <div class="frm-inline">
             <div class="frm">
               <label for="" class="small-label">First Name*</label>
-              <input type="text" name="" value="" class="input">
+              <input type="text" class="input" formControlName="firstName" [(ngModel)]="user.firstName">
+              <div *ngIf="profileForm.controls['firstName'].touched && !profileForm.controls['firstName'].valid" class="help-block">Please enter first name</div>
             </div>
             <div class="frm">
               <label for="" class="small-label">Last Name*</label>
-              <input type="text" name="" value="" class="input">
+              <input type="text" class="input" formControlName="lastName" [(ngModel)]="user.lastName">
+              <div *ngIf="profileForm.controls['lastName'].touched && !profileForm.controls['lastName'].valid" class="help-block">Please enter last name</div>
             </div>
           </div>
-
           <div class="frm-inline">
             <div class="frm">
               <label for="" class="small-label">Phone Number 1*</label>
               <div class="inner-inline">
                 <div class="inner-frm">
-                  <input type="text" name="" value="" class="input input-number">
+                  <input type="text" class="input input-number" [value]="'+1'" formControlName="code" disabled>
+                  <div *ngIf="profileForm.controls['code'].touched && !profileForm.controls['code'].valid" class="help-block">Please enter phone number</div>
                 </div>
                 <div class="inner-frm inner-frm-full">
-                  <input type="text" name="" value="" class="input">
+                  <input type="text" class="input" formControlName="phoneNumber" [(ngModel)]="user.phoneNumber">
+                  <div *ngIf="profileForm.controls['phoneNumber'].touched && !profileForm.controls['phoneNumber'].valid" class="help-block">Please enter phone number</div>
                 </div>
               </div>
             </div>
             <div class="frm">
-              <label for="" class="small-label">Phone Number 2*</label>
+              <label for="" class="small-label">Phone Number 2</label>
               <div class="inner-inline">
                 <div class="inner-frm">
-                  <input type="text" name="" value="" class="input input-number">
+                  <input type="text" class="input input-number" [value]="'+1'" formControlName="code2" disabled>
+                  <div *ngIf="profileForm.controls['code2'].touched && !profileForm.controls['code2'].valid" class="help-block">Please enter phone number</div>
                 </div>
                 <div class="inner-frm inner-frm-full">
-                  <input type="text" name="" value="" class="input">
+                  <input type="text" class="input" formControlName="phoneNumber2" [(ngModel)]="user.phoneNumber2">
+                  <div *ngIf="profileForm.controls['phoneNumber2'].touched && !profileForm.controls['phoneNumber2'].valid" class="help-block">Please enter phone number</div>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="frm-inline">
-            <div class="frm">
+            <!-- <div class="frm">
               <label for="" class="small-label">Joining as</label>
               <div class="select">
                 <select name="" class="input" id="">
@@ -62,59 +67,65 @@
                 </select>
                 <i class="arrow gray down"></i>
               </div>
-            </div>
+            </div> -->
             <div class="frm">
-              <label for="" class="small-label">US DOT Number</label>
-              <input type="text" name="" value="" class="input">
+              <label for="" class="small-label">Company*</label>
+              <input type="text" class="input" formControlName="name" [(ngModel)]="user.name">
+              <div *ngIf="profileForm.controls['name'].touched && !profileForm.controls['name'].valid" class="help-block">Please enter company name</div>
             </div>
           </div>
         </div>
 
         <div class="form-block">
           <h5 class="heading">Base Location Information</h5>
-
           <div class="frm-inline">
             <div class="frm">
-              <label for="" class="small-label">City</label>
+              <label for="" class="small-label">State*</label>
               <div class="select">
-                <select name="" class="input" id="">
-                  <option value="0"></option>
-                  <option value="1">City</option>
+                <select (ngModelChange)="getStateCities($event)" formControlName="state" class="input" [(ngModel)]="user.state">
+                  <option value=""></option>
+                  <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
                 </select>
                 <i class="arrow gray down"></i>
+                <div *ngIf="profileForm.controls['state'].touched && !profileForm.controls['state'].valid" class="help-block">Please select state</div>
               </div>
             </div>
             <div class="frm">
-              <label for="" class="small-label">State</label>
+              <label for="" class="small-label">City*</label>
               <div class="select">
-                <select name="" class="input" id="">
-                  <option value="0"></option>
-                  <option value="1">State</option>
+                <select formControlName="city" class="input" [(ngModel)]="user.city">
+                  <option value=""></option>
+                  <option *ngFor="let city of cities" [ngValue]="city.city">{{city.city}}</option>
                 </select>
                 <i class="arrow gray down"></i>
+                <div *ngIf="profileForm.controls['city'].touched && !profileForm.controls['city'].valid" class="help-block">Please select city</div>
               </div>
             </div>
           </div>
 
           <div class="frm-inline">
             <div class="frm">
-              <label for="" class="small-label">Address Line 1</label>
-              <input type="text" name="" value="" class="input">
+              <label for="" class="small-label">Address Line 1*</label>
+              <input type="text" class="input" formControlName="addressLine1" [(ngModel)]="user.addressLine1">
+              <div *ngIf="profileForm.controls['addressLine1'].touched && !profileForm.controls['addressLine1'].valid" class="help-block">Please enter address</div>
             </div>
             <div class="frm">
               <label for="" class="small-label">Address Line 2</label>
-              <input type="text" name="" value="" class="input">
+              <input type="text" class="input" formControlName="addressLine2" [(ngModel)]="user.addressLine2">
+              <div *ngIf="profileForm.controls['addressLine2'].touched && !profileForm.controls['addressLine2'].valid" class="help-block">Please enter address</div>
             </div>
           </div>
 
           <div class="frm-inline">
             <div class="frm">
               <label for="" class="small-label">Address Line 3</label>
-              <input type="text" name="" value="" class="input">
+              <input type="text" class="input" formControlName="addressLine3" [(ngModel)]="user.addressLine3">
+              <div *ngIf="profileForm.controls['addressLine3'].touched && !profileForm.controls['addressLine3'].valid" class="help-block">Please enter address</div>
             </div>
             <div class="frm">
               <label for="" class="small-label">Address Line 4</label>
-              <input type="text" name="" value="" class="input">
+              <input type="text" class="input" formControlName="addressLine3">
+              <div *ngIf="profileForm.controls['addressLine4'].touched && !profileForm.controls['addressLine3'].valid" class="help-block">Please enter address</div>
             </div>
           </div>
 
@@ -122,25 +133,27 @@
             <div class="frm frm-full">
               <div class="inner-inline">
                 <div class="inner-frm">
-                  <label for="" class="small-label">Zip Code</label>
-                  <input type="text" name="" value="" class="input input-zip">
+                  <label for="" class="small-label">Zip Code*</label>
+                  <input type="text" class="input input-zip" formControlName="zip" [(ngModel)]="user.zip">
+                  <div *ngIf="profileForm.controls['zip'].touched && !profileForm.controls['zip'].valid" class="help-block">Please enter address</div>
                 </div>
-                <div class="inner-frm inner-frm-full">
+                <!-- <div class="inner-frm inner-frm-full">
                   <label for="" class="small-label">Latitude</label>
                   <input type="text" name="" value="" class="input">
                 </div>
                 <div class="inner-frm inner-frm-full">
                   <label for="" class="small-label">Longitude</label>
                   <input type="text" name="" value="" class="input">
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
 
         </div>
         <div class="frm">
-          <button type="button" name="button" class="button">Save the Details</button>
+          <button type="submit" name="button" class="button">Save the Details</button>
         </div>
+      </form>
       </div>
     </div>
   </div>

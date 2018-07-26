@@ -19,36 +19,43 @@
       </div>
       <div class="authFlexEnd">
         <div class="form-content form-register">
-          <form class="form" action="index.html" method="post">
+          <form class="form" [formGroup]="registerForm" (ngSubmit)="saveUser()">
             <label for="" class="label">Your Information</label>
             <div class="frm-inline">
               <div class="frm">
-                <input type="text" name="" value="" class="input" placeholder="First Name">
+                <input type="text" class="input" placeholder="First Name" formControlName="firstName">
+                <div *ngIf="registerForm.controls['firstName'].touched && !registerForm.controls['firstName'].valid " class="help-block">Please enter first name</div>
               </div>
               <div class="frm">
-                <input type="text" name="" value="" class="input" placeholder="Last Name">
+                <input type="text" class="input" placeholder="Last Name" formControlName="lastName">
+                <div *ngIf="registerForm.controls['lastName'].touched && !registerForm.controls['lastName'].valid " class="help-block">Please enter last name</div>
               </div>
               <div class="frm">
-                <input type="text" name="" value="" class="input" placeholder="Cell Number">
+                <input type="text" class="input" placeholder="Cell Number" formControlName="phoneNumber">
+                <div *ngIf="registerForm.controls['phoneNumber'].touched && !registerForm.controls['phoneNumber'].valid " class="help-block">Please enter phone number</div>
               </div>
               <div class="frm">
-                <input type="text" name="" value="" class="input" placeholder="US DOT Number">
+                <input type="text" class="input" placeholder="Company Name" formControlName="name">
+                <div *ngIf="registerForm.controls['name'].touched && !registerForm.controls['name'].valid " class="help-block">Please enter company name</div>
               </div>
             </div>
             <label for="" class="label">Account Information</label>
             <div class="frm-inline">
               <div class="frm">
-                <input type="text" name="" value="" class="input" placeholder="Email Id">
+                <input type="text" class="input" placeholder="Email Id" formControlName="email" required>
+                <div *ngIf="registerForm.controls['email'].touched && !registerForm.controls['email'].valid " class="help-block">Please enter valid email</div>
               </div>
               <div class="frm">
-                <input type="password" name="" value="" class="input" placeholder="Password">
+                <input type="password" class="input" placeholder="Password" formControlName="password">
+                <div *ngIf="registerForm.controls['password'].touched && !registerForm.controls['password'].valid " class="help-block">Please enter password</div>
               </div>
               <div class="frm frm-full">
-                <input type="password" name="" value="" class="input" placeholder="Confirm Password">
+                <input type="password" class="input" placeholder="Confirm Password" formControlName="confirm_password">
+                <div class="help-block" *ngIf="registerForm.controls['confirm_password'].errors?.MatchPassword && registerForm.controls['confirm_password'].errors?.MatchPassword">Password not match</div>
               </div>
             </div>
             <div class="frm aligncenter">
-              <button type="button" name="button" class="button">Sign Up Now</button>
+              <button type="submit" name="button" class="button">Sign Up Now</button>
             </div>
           </form>
           <div class="frm-bottom">

@@ -6,10 +6,10 @@ import { AuthenticationsComponent } from './authentications.component';
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,    
+    BrowserModule,
   ],
   exports:[
-    BrowserModule,    
+    BrowserModule,
   ],
   declarations: [AuthenticationsComponent]
 })

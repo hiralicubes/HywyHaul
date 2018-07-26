@@ -1,31 +1,31 @@
 <div class="profile">
-  <h4 class="title">Profile</h4>
+  <h4 class="title">{{title}}</h4>
   <div class="snowBlock fullHeight">
     <div class="headBG"></div>
     <div class="flex">
       <div class="flex-left">
         <div class="profilePhotoContainer">
           <div class="profilePhoto">
-            
           </div>
         </div>
       </div>
       <div class="flex-body">
         <div class="flex-head">
           <div class="flex-head-left">
-            <h4 class="heading">ABC Shipping Company</h4>
-            <small>Shipper Name: Jack Doe</small>
+            <h4 class="heading">ABC Shipping Company{{user?.shipper.name}}</h4>
+            <small>Shipper Name: {{user?.firstName}} {{user?.lastName}}</small>
           </div>
           <div class="flex-head-right">
             <div class="RefNo">Ref No.:
-              <span>GZYPIF4D</span>
+              <span>{{user?.usDOTNumber}}</span>
             </div>
           </div>
         </div>
         <div class="flex-body-space">
+          <form class="form" [formGroup]="loadForm" (ngSubmit)="saveLoad()">
           <div class="form-block">
             <h5 class="heading">Load Information</h5>
-            <div class="frm-inline">
+            <!-- <div class="frm-inline">
               <div class="frm">
                 <label for="" class="small-label">Origin Address</label>
                 <input type="text" name="" value="" class="input">
@@ -34,205 +34,131 @@
                 <label for="" class="small-label">Destination Address</label>
                 <input type="text" name="" value="" class="input">
               </div>
-            </div>
+            </div> -->
 
             <div class="frm-inline">
               <div class="frm">
                 <label for="" class="small-label">Origin</label>
                 <div class="select">
-                  <select name="" class="input" id="">
-                    <option value="0">City, State</option>
-                    <option value="1">Origin</option>
+                  <select name="" class="input" id="" formControlName="origin">
+                    <option value="">City, State</option>
+                    <option *ngFor="let origin of origins" [ngValue]="origin">{{origin}}</option>
                   </select>
                   <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['origin'].touched && !loadForm.controls['origin'].valid" class="help-block">Please select origin</div>
                 </div>
               </div>
               <div class="frm">
                 <label for="" class="small-label">Destination</label>
                 <div class="select">
-                  <select name="" class="input" id="">
-                    <option value="0">City, State</option>
-                    <option value="1">Destination</option>
+                  <select name="" class="input" id="" formControlName="destination">
+                    <option value="">City, State</option>
+                    <option *ngFor="let destination of destinations" [ngValue]="destination">{{destination}}</option>
                   </select>
                   <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['destination'].touched && !loadForm.controls['destination'].valid" class="help-block">Please select destination</div>
                 </div>
               </div>
             </div>
 
             <div class="frm-inline">
               <div class="frm">
-                <label for="" class="small-label">Pick Up Date</label>
+                <label for="" class="small-label">Earliest Pickup DateTime</label>
                 <div class="select">
-                  <input type="text" name="" value="" class="input">
+                  <input type="text" name="" value="" class="input" formControlName="earliestPickupDateTime">
                   <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['earliestPickupDateTime'].touched && !loadForm.controls['earliestPickupDateTime'].valid" class="help-block">Please select earliest pickup datetime</div>
                 </div>
               </div>
               <div class="frm">
-                <label for="" class="small-label">Drop Off Date</label>
+                <label for="" class="small-label">Latest Pickup DateTime</label>
                 <div class="select">
-                  <input type="text" name="" value="" class="input">
+                  <input type="text" name="" value="" class="input" formControlName="latestPickupDateTime">
                   <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['latestPickupDateTime'].touched && !loadForm.controls['latestPickupDateTime'].valid" class="help-block">Please select latest pickup datetime</div>
                 </div>
               </div>
             </div>
 
             <div class="frm-inline">
               <div class="frm">
-                <label for="" class="small-label">Pick Up Time Range</label>
-                <div class="inner-inline">
-                  <div class="inner-frm inner-frm-full">
-                    <div class="select">
-                      <select name="" class="input" id="">
-                        <option value="0">From time</option>
-                        <option value="1">From time 1</option>
-                      </select>
-                      <i class="arrow gray down"></i>
-                    </div>
-                  </div>
-                  <div class="inner-frm inner-frm-full">
-                    <div class="select">
-                      <select name="" class="input" id="">
-                        <option value="0">To time</option>
-                        <option value="1">To time 1</option>
-                      </select>
-                      <i class="arrow gray down"></i>
-                    </div>
-                  </div>
+                <label for="" class="small-label">Earliest Drop Off DateTime</label>
+                <div class="select">
+                  <input type="text" name="" value="" class="input" formControlName="earliestDropoffDateTime">
+                  <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['earliestDropoffDateTime'].touched && !loadForm.controls['earliestDropoffDateTime'].valid" class="help-block">Please select earliest drop off datetime</div>
                 </div>
               </div>
               <div class="frm">
-                <label for="" class="small-label">Drop Off Time Range</label>
-                <div class="inner-inline">
-                  <div class="inner-frm inner-frm-full">
-                    <div class="select">
-                      <select name="" class="input" id="">
-                        <option value="0">From time</option>
-                        <option value="1">From time 1</option>
-                      </select>
-                      <i class="arrow gray down"></i>
-                    </div>
-                  </div>
-                  <div class="inner-frm inner-frm-full">
-                    <div class="select">
-                      <select name="" class="input" id="">
-                        <option value="0">To time</option>
-                        <option value="1">To time 1</option>
-                      </select>
-                      <i class="arrow gray down"></i>
-                    </div>
-                  </div>
+                <label for="" class="small-label">Latest Drop Off DateTime</label>
+                <div class="select">
+                  <input type="text" name="" value="" class="input" formControlName="latestDropoffDateTime">
+                  <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['latestDropoffDateTime'].touched && !loadForm.controls['latestDropoffDateTime'].valid" class="help-block">Please select latest drop off datetime</div>
                 </div>
               </div>
             </div>
-
-
           </div>
-
           <div class="form-block">
             <h5 class="heading">Additional Information</h5>
             <div class="frm-inline">
               <div class="frm">
-                <label for="" class="small-label">Distance</label>
-                <input type="text" name="" value="" class="input">
-              </div>
-              <div class="frm">
                 <label for="" class="small-label">Equipment Type</label>
                 <div class="select">
-                  <select name="" class="input" id="">
-                    <option value="0"></option>
-                    <option value="1">Equipment Type 1</option>
+                  <select name="" class="input" id="" formControlName="equipment">
+                    <option value=""></option>
+                    <option *ngFor="let equipment of equipments" [ngValue]="equipment">{{equipment}}</option>
                   </select>
                   <i class="arrow gray down"></i>
+                  <div *ngIf="loadForm.controls['equipment'].touched && !loadForm.controls['equipment'].valid" class="help-block">Please select equipment</div>
                 </div>
               </div>
             </div>
-
             <div class="frm-inline">
-              <div class="frm">
-                <div class="inner-inline">
-                  <div class="inner-frm inner-frm-full">
-                    <label for="" class="small-label">No. Loads </label>
-                    <input type="text" name="" value="" class="input">
-                  </div>
-                  <div class="inner-frm inner-frm-full">
-                    <label for="" class="small-label">Load Available Daily </label>
-                    <div class="select">
-                      <select name="" class="input" id="">
-                        <option value="0">Yes/No</option>
-                        <option value="1">Yes/No 1</option>
-                      </select>
-                      <i class="arrow gray down"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="frm">
                 <div class="inner-inline">
                   <div class="inner-frm inner-frm-full">
                     <label for="" class="small-label">Load Size</label>
                     <div class="select">
-                      <select name="" class="input" id="">
-                        <option value="0">TL/LTL</option>
-                        <option value="1">TL/LTL 1</option>
+                      <select name="" class="input" id="" formControlName="load_size">
+                        <option value="">TL/LTL</option>
+                        <option *ngFor="let size of loadsizes" [ngValue]="size">{{size}}</option>
                       </select>
                       <i class="arrow gray down"></i>
+                      <div *ngIf="loadForm.controls['load_size'].touched && !loadForm.controls['load_size'].valid" class="help-block">Please select load size</div>
                     </div>
                   </div>
                   <div class="inner-frm inner-frm-full">
                     <label for="" class="small-label">Weight
                       <span>(lbs)</span>
                     </label>
-                    <input type="text" name="" value="" class="input">
+                    <input type="text" name="" value="" class="input" formControlName="weight">
+                    <div class="help-block" *ngIf="loadForm.controls['weight'].errors?.MatchNumber && loadForm.controls['weight'].errors?.MatchNumber">please enter valid weight</div>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="frm-inline">
-              <div class="frm">
-                <label for="" class="small-label">Price
-                  <span>($ per mile)</span>
-                </label>
-                <input type="text" name="" value="" class="input">
-              </div>
               <div class="frm">
                 <label for="" class="small-label">Rate
                   <span>($ per mile)</span>
                 </label>
-                <input type="text" name="" value="" class="input">
+                <input type="text" name="" value="" class="input" formControlName="ratePerMile">
+                <div class="help-block" *ngIf="loadForm.controls['ratePerMile'].errors?.MatchNumber2 && loadForm.controls['ratePerMile'].errors?.MatchNumber2">please enter valid rate</div>
               </div>
             </div>
-
             <div class="frm-inline">
               <div class="frm frm-full">
                 <label for="" class="small-label">Shipper’s Instructions </label>
-                <textarea name="" id="" cols="30" rows="10" class="input" placeholder="e.g. Maintain product temperature to 40°C throughout. Trailer must be in good hygeinic condition."></textarea>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="form-block">
-            <h5 class="heading">Contact Information</h5>
-            <div class="frm-inline">
-              <div class="frm">
-                <label for="" class="small-label">Contact Name</label>
-                <input type="text" name="" value="" class="input">
-              </div>
-              <div class="frm">
-                <label for="" class="small-label">Phone Number</label>
-                <input type="text" name="" value="" class="input">
-              </div>
-              <div class="frm">
-                <label for="" class="small-label">Email Address</label>
-                <input type="text" name="" value="" class="input">
+                <textarea name="" id="" cols="30" rows="10" class="input" placeholder="e.g. Maintain product temperature to 40°C throughout. Trailer must be in good hygeinic condition." formControlName="instructions"></textarea>
+                <div *ngIf="loadForm.controls['instructions'].touched && !loadForm.controls['instructions'].valid" class="help-block">Please enter instructions</div>
               </div>
             </div>
           </div>
-
           <div class="frm">
-            <button type="button" name="button" class="button">Create the Load</button>
+            <button type="submit" name="button" class="button">Create the Load</button>
           </div>
+         </form>
         </div>
       </div>
     </div>

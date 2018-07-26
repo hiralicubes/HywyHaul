@@ -20,7 +20,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"              
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
@@ -28,7 +28,8 @@
               "src/assets/css/slick-theme.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/style.css",
-              "src/assets/css/media.css"
+              "src/assets/css/media.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "src/assets/js/jquery-3.3.1.min.js",
