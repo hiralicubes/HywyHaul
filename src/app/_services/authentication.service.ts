@@ -39,8 +39,8 @@ export class AuthenticationService {
   		});
   }
 
-  logoutService(token) {
-    console.log(token);
+  logout() {
+    var token = localStorage.getItem('userToken');
     this.http.post(this.admin_api_url+'/auth/logout',{}, {
       headers: new HttpHeaders({
         'x-hh-token': token,

@@ -28,14 +28,14 @@
         </nav>
       </div>
       <div class="navbar-right dropdown">
-        <a href="javascript:void(0);" class="userdropdown dropdown-toggle" data-toggle="dropdown" routerLink="/pages/profile">
+        <a href="javascript:void(0);" class="userdropdown dropdown-toggle" data-toggle="dropdown">
           <div class="dpProfile">
             <img src="../../../assets/images/avtar.png" alt="">
             <i class="arrow down"></i>
           </div>
           <ul class="dropdown-menu">
             <li><a href="javascript:void(0);" routerLink="/pages/profile">Profile</a></li>
-            <li><a href="javascript:void(0);" routerLink="/login">Logout</a></li>            
+            <li><a href="javascript:void(0)" (click)="logout()">Logout</a></li>
           </ul>
         </a>
       </div>

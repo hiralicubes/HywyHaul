@@ -70,7 +70,7 @@
             </div> -->
             <div class="frm">
               <label for="" class="small-label">Company*</label>
-              <input type="text" class="input" formControlName="name" [(ngModel)]="user.name">
+              <input type="text" class="input" formControlName="name">
               <div *ngIf="profileForm.controls['name'].touched && !profileForm.controls['name'].valid" class="help-block">Please enter company name</div>
             </div>
           </div>
