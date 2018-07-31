@@ -1241,12 +1241,10 @@ th.right, th.right {
   flex-wrap: wrap;
   align-items: flex-start;
 }
-<<<<<<< HEAD
 .commonShadow{
     background-color: #FFFFFF;
     box-shadow: 0 0.125em 0.625em 0 rgba(187,195,202,0.67);
-=======
-
+}
 .commonShadow {
   background-color: #FFFFFF;
   box-shadow: 0 0.125em 0.625em 0 rgba(187, 195, 202, 0.67);
@@ -1254,7 +1252,6 @@ th.right, th.right {
 
 .load-information, .shipper-information {
   flex: 0.36
->>>>>>> master
 }
 
 .rate-details {
