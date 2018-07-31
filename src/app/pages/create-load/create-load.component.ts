@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { log } from 'util';
 import { AuthenticationService } from "../../_services/authentication.service";
 import { LoadService } from "../../_services/load/load.service";
 import { UserService } from "../../_services/user/user.service";
 import { AbstractControl, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-load',
@@ -17,12 +18,17 @@ export class CreateLoadComponent implements OnInit {
   loadForm: FormGroup;
   public token = localStorage.getItem('userToken');
   public user : any;
+  public addresses : any;
+  public equipments : any;
+  public sizes : any;
+  public currUser: any = JSON.parse(localStorage.getItem("currUser"));
 
   constructor(
     formBuilder: FormBuilder,
     private authenticationService:AuthenticationService,
     private userService: UserService,
     private router: Router,
+    private toastr: ToastrService,
     private loadService: LoadService) {
       this.loadForm = formBuilder.group({
         earliestPickupDateTime: ['', Validators.required],
@@ -72,12 +78,27 @@ export class CreateLoadComponent implements OnInit {
           if (data['code'] == 'OK') {
             this.user = data['data'];
           } else {
-            //this.alertService.error(data['message']);
+            this.toastr.error("Error in process!", 'Oops!');
           }
         },
         error => {
-          //this.alertService.error(error.error);
+          this.toastr.error(error.error.errors[0].message, 'Oops!');
       });
+      this.loadService.getAddresses(this.token)
+        .subscribe(
+          data => {
+            if (data['code'] == 'OK') {
+              this.addresses = data['data'];
+            } else {
+              this.toastr.error("Error in process!", 'Oops!');
+            }
+          },
+          error => {
+            this.toastr.error(error.error.errors[0].message, 'Oops!');
+      });
+
+      this.equipments = ['type1','type2'];
+      this.sizes = ['TL/LTL1','TL/LTL2'];
     }
   }
 
@@ -95,12 +116,13 @@ export class CreateLoadComponent implements OnInit {
     this.loadForm.controls['instructions'].markAsTouched();
 
     if (this.loadForm.valid) {
-      //var formData = this.loadForm.value;
       var formData = {
         'data': {
+          "shipperId": this.currUser.id,
           "earliestPickupDateTime": this.loadForm.value.earliestPickupDateTime,
           "latestPickupDateTime": this.loadForm.value.latestPickupDateTime,
           "earliestDropoffDateTime": this.loadForm.value.earliestDropoffDateTime,
+          "latestDropoffDateTime": this.loadForm.value.latestDropoffDateTime,
           "origin": this.loadForm.value.origin,
           "destination": this.loadForm.value.destination,
           "equipment": this.loadForm.value.equipment,
@@ -111,20 +133,20 @@ export class CreateLoadComponent implements OnInit {
         }
       }
 
+      console.log(formData);
+
       this.loadService.createLoad(this.token,formData)
         .subscribe(
           data => {
-            //this.alertService.clear();
             if (data['code'] == 'OK') {
-              //this.router.navigate(['login'])
+              this.toastr.success("Created load successfully.", 'Success');
             } else {
-              //this.alertService.error(data['message']);
+              this.toastr.error("Error in process!", 'Oops!');
             }
           },
           error => {
-            //this.alertService.error(error.error);
-      });
-
+            this.toastr.error(error.error.errors[0].message, 'Oops!');
+        });
     }
   }
 

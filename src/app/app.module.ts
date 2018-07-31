@@ -21,6 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot()
     // LoginModule,
   ],

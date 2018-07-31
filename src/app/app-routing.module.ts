@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoadListComponent } from './pages/load-list/load-list.component';
 import { LoadDetailsComponent } from './pages/load-details/load-details.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 const routes: Routes = [
     {
@@ -42,6 +43,8 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         FormsModule,
         ReactiveFormsModule,
+        OwlDateTimeModule,
+        OwlNativeDateTimeModule
     ],
     exports: [RouterModule],
     declarations: [

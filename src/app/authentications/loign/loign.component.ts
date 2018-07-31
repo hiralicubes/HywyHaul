@@ -46,6 +46,7 @@ export class LoignComponent implements OnInit {
             let response = data['data'];
             localStorage.setItem('currUser', JSON.stringify(response));
             localStorage.setItem('userToken', response.authToken);
+            this.toastr.success("Logged in successfully.", 'Success');
             this.router.navigateByUrl('/pages/profile');
           } else {
             this.toastr.error("Error in process!", 'Oops!');

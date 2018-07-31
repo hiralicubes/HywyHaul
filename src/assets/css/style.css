@@ -134,7 +134,7 @@ img {
 input, select, textarea, button {
   font-family: "proxima_nova", sans-serif;
   font-size: 14px;
-  color: #fff;
+  color: #000;
   font-weight: 400;
 }
 
@@ -730,7 +730,7 @@ h2.heading span {
   box-shadow: 0 0.125em 0.625em 0 rgba(187, 195, 202, 0.67);
 }
 .show .dropdown-menu {
-  display: block;  
+  display: block;
 }
 .dropdown-menu li{
   padding: 0;
@@ -1228,7 +1228,7 @@ th.right, th.right {
 }
 .commonShadow{
     background-color: #FFFFFF;
-    box-shadow: 0 0.125em 0.625em 0 rgba(187,195,202,0.67);  
+    box-shadow: 0 0.125em 0.625em 0 rgba(187,195,202,0.67);
 }
 .load-information, .shipper-information{flex: 0.33}
 .rate-details{flex: 0.28}

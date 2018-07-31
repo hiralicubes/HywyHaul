@@ -53,6 +53,8 @@ export class ProfileComponent implements OnInit {
         data => {
           if (data['code'] == 'OK') {
             this.user = data['data'];
+            this.user.state = '';
+            this.user.city = '';
           } else {
             this.toastr.error("Error in process!", 'Oops!');
           }

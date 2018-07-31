@@ -12,7 +12,7 @@
       <div class="flex-body">
         <div class="flex-head">
           <div class="flex-head-left">
-            <h4 class="heading">ABC Shipping Company{{user?.shipper.name}}</h4>
+            <h4 class="heading">ABC Shipping Company{{user?.shipper?.name}}</h4>
             <small>Shipper Name: {{user?.firstName}} {{user?.lastName}}</small>
           </div>
           <div class="flex-head-right">
@@ -35,14 +35,13 @@
                 <input type="text" name="" value="" class="input">
               </div>
             </div> -->
-
             <div class="frm-inline">
               <div class="frm">
                 <label for="" class="small-label">Origin</label>
                 <div class="select">
                   <select name="" class="input" id="" formControlName="origin">
-                    <option value="">City, State</option>
-                    <option *ngFor="let origin of origins" [ngValue]="origin">{{origin}}</option>
+                    <option value="">Address, City, State</option>
+                    <option *ngFor="let address of addresses" [ngValue]="address.id">{{address.addressLine1}}, {{address.city}}, {{address.state}}</option>
                   </select>
                   <i class="arrow gray down"></i>
                 </div>
@@ -52,37 +51,39 @@
                 <label for="" class="small-label">Destination</label>
                 <div class="select">
                   <select name="" class="input" id="" formControlName="destination">
-                    <option value="">City, State</option>
-                    <option *ngFor="let destination of destinations" [ngValue]="destination">{{destination}}</option>
+                    <option value="">Address, City, State</option>
+                    <option *ngFor="let address of addresses" [ngValue]="address.id">{{address.addressLine1}}, {{address.city}}, {{address.state}}</option>
                   </select>
                   <i class="arrow gray down"></i>
                 </div>
                 <div *ngIf="loadForm.controls['destination'].touched && !loadForm.controls['destination'].valid" class="help-block">Please select destination</div>
               </div>
             </div>
-
             <div class="frm-inline">
               <div class="frm">
-                <label for="" class="small-label">Earliest Pickup DateTime</label>
-                  <input type="text" name="" value="" class="input" formControlName="earliestPickupDateTime">
+                <label class="small-label">Earliest Pickup DateTime</label>
+                  <input [owlDateTime]="dt" [owlDateTimeTrigger]="dt" placeholder="Select Date Time" class="input" formControlName="earliestPickupDateTime">
+                  <owl-date-time #dt></owl-date-time>
                   <div *ngIf="loadForm.controls['earliestPickupDateTime'].touched && !loadForm.controls['earliestPickupDateTime'].valid" class="help-block">Please select earliest pickup datetime</div>
               </div>
               <div class="frm">
                 <label for="" class="small-label">Latest Pickup DateTime</label>
-                  <input type="text" name="" value="" class="input" formControlName="latestPickupDateTime">
+                  <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" class="input" placeholder="Select Date Time" formControlName="latestPickupDateTime">
+                  <owl-date-time #dt1></owl-date-time>
                   <div *ngIf="loadForm.controls['latestPickupDateTime'].touched && !loadForm.controls['latestPickupDateTime'].valid" class="help-block">Please select latest pickup datetime</div>
               </div>
             </div>
-
             <div class="frm-inline">
               <div class="frm">
                 <label for="" class="small-label">Earliest Drop Off DateTime</label>
-                  <input type="text" name="" value="" class="input" formControlName="earliestDropoffDateTime">
+                  <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="Select Date Time" class="input" formControlName="earliestDropoffDateTime">
+                  <owl-date-time #dt2></owl-date-time>
                   <div *ngIf="loadForm.controls['earliestDropoffDateTime'].touched && !loadForm.controls['earliestDropoffDateTime'].valid" class="help-block">Please select earliest drop off datetime</div>
               </div>
               <div class="frm">
                 <label for="" class="small-label">Latest Drop Off DateTime</label>
-                  <input type="text" name="" value="" class="input" formControlName="latestDropoffDateTime">
+                  <input [owlDateTime]="dt3" [owlDateTimeTrigger]="dt3" placeholder="Select Date Time" class="input" formControlName="latestDropoffDateTime">
+                  <owl-date-time #dt3></owl-date-time>
                   <div *ngIf="loadForm.controls['latestDropoffDateTime'].touched && !loadForm.controls['latestDropoffDateTime'].valid" class="help-block">Please select latest drop off datetime</div>
               </div>
             </div>
@@ -94,7 +95,7 @@
                 <label for="" class="small-label">Equipment Type</label>
                 <div class="select">
                   <select name="" class="input" id="" formControlName="equipment">
-                    <option value=""></option>
+                    <option value="">Select Equipment</option>
                     <option *ngFor="let equipment of equipments" [ngValue]="equipment">{{equipment}}</option>
                   </select>
                   <i class="arrow gray down"></i>
@@ -108,9 +109,9 @@
                   <div class="inner-frm inner-frm-full">
                     <label for="" class="small-label">Load Size</label>
                     <div class="select">
-                      <select name="" class="input" id="" formControlName="load_size">
-                        <option value="">TL/LTL</option>
-                        <option *ngFor="let size of loadsizes" [ngValue]="size">{{size}}</option>
+                      <select class="input" formControlName="load_size">
+                        <option value="">Select Load Size</option>
+                        <option *ngFor="let size of sizes" [ngValue]="size">{{size}}</option>
                       </select>
                       <i class="arrow gray down"></i>
                     </div>
@@ -120,8 +121,8 @@
                     <label for="" class="small-label">Weight
                       <span>(lbs)</span>
                     </label>
-                    <input type="text" name="" value="" class="input" formControlName="weight">
-                    <div class="help-block" *ngIf="loadForm.controls['weight'].errors?.MatchNumber && loadForm.controls['weight'].errors?.MatchNumber">please enter valid weight</div>
+                    <input type="text" class="input" formControlName="weight">
+                    <div class="help-block" *ngIf="(loadForm.controls['weight'].errors?.MatchNumber && loadForm.controls['weight'].errors?.MatchNumber) || (loadForm.controls['weight'].touched && !loadForm.controls['weight'].valid)">please enter valid weight</div>
                   </div>
                 </div>
               </div>
@@ -131,8 +132,8 @@
                 <label for="" class="small-label">Rate
                   <span>($ per mile)</span>
                 </label>
-                <input type="text" name="" value="" class="input" formControlName="ratePerMile">
-                <div class="help-block" *ngIf="loadForm.controls['ratePerMile'].errors?.MatchNumber2 && loadForm.controls['ratePerMile'].errors?.MatchNumber2">please enter valid rate</div>
+                <input type="text" class="input" formControlName="ratePerMile">
+                <div class="help-block" *ngIf="(loadForm.controls['ratePerMile'].errors?.MatchNumber2 && loadForm.controls['ratePerMile'].errors?.MatchNumber2) || (loadForm.controls['ratePerMile'].touched && !loadForm.controls['ratePerMile'].valid)">please enter valid rate</div>
               </div>
             </div>
             <div class="frm-inline">

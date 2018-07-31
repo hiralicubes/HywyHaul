@@ -83,7 +83,7 @@
               <label for="" class="small-label">State*</label>
               <div class="select">
                 <select (ngModelChange)="getStateCities($event)" formControlName="state" class="input" [(ngModel)]="user.state">
-                  <option value=""></option>
+                  <option value="">Select State</option>
                   <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
                 </select>
                 <i class="arrow gray down"></i>
@@ -94,7 +94,7 @@
               <label for="" class="small-label">City*</label>
               <div class="select">
                 <select formControlName="city" class="input" [(ngModel)]="user.city">
-                  <option value=""></option>
+                  <option value="">Select City</option>
                   <option *ngFor="let city of cities" [ngValue]="city.city">{{city.city}}</option>
                 </select>
                 <i class="arrow gray down"></i>

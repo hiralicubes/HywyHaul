@@ -23,6 +23,15 @@ export class LoadService {
 		});
 	}
 
+  getAddresses(token) {
+		return this.http.get(this.admin_api_url+'/addresses', {
+      headers: new HttpHeaders({
+        'x-hh-token': token,
+        'x-api-key': this.x_api_key
+      })
+		});
+	}
+
 	createLoad(token, userData) {
 		return this.http.post(this.admin_api_url+'/loads', userData, {
       headers: new HttpHeaders({

@@ -29,7 +29,8 @@
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/style.css",
               "src/assets/css/media.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ng-pick-datetime/assets/style/picker.min.css"
             ],
             "scripts": [
               "src/assets/js/jquery-3.3.1.min.js",
